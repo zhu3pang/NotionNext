@@ -4,7 +4,7 @@ const BLOG = {
   NOTION_PAGE_ID: process.env.NOTION_PAGE_ID || 
     '3803fe372d56406aba542a33c1a29d1e,en:3803fe372d56406aba542a33c1a29d1e',
   NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 5, // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
-  THEME: process.env.NEXT_PUBLIC_THEME || 'simple', // 主题， 支持 ['next','hexo',"fukasawa','medium','example'] @see https://preview.tangly1024.com
+  THEME: process.env.NEXT_PUBLIC_THEME || 'gitbook', // 主题， 支持 ['next','hexo',"fukasawa','medium','example'] @see https://preview.tangly1024.com
   THEME_SWITCH: process.env.NEXT_PUBLIC_THEME_SWITCH || true, // 是否显示切换主题按钮
   LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2021, // e.g if leave this empty, current year will be used.
@@ -130,7 +130,7 @@ const BLOG = {
   CAN_COPY: process.env.NEXT_PUBLIC_CAN_COPY || true, // 是否允许复制页面内容 默认允许，如果设置为false、则全栈禁止复制内容。
   // 自定义右键菜单
   CUSTOM_RIGHT_CLICK_CONTEXT_MENU:
-    process.env.NEXT_PUBLIC_CUSTOM_RIGHT_CLICK_CONTEXT_MENU || true, // 自定义右键菜单，覆盖系统菜单
+    process.env.NEXT_PUBLIC_CUSTOM_RIGHT_CLICK_CONTEXT_MENU || false, // 自定义右键菜单，覆盖系统菜单
   CUSTOM_RIGHT_CLICK_CONTEXT_MENU_THEME_SWITCH:
     process.env.NEXT_PUBLIC_CUSTOM_RIGHT_CLICK_CONTEXT_MENU_THEME_SWITCH ||
     true, // 是否显示切换主题
@@ -241,7 +241,7 @@ const BLOG = {
 
   //   ********动态特效相关********
   // 鼠标点击烟花特效
-  FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || true, // 开关
+  FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || false, // 开关
   // 烟花色彩，感谢 https://github.com/Vixcity 提交的色彩
   FIREWORKS_COLOR: [
     '255, 20, 97',
@@ -251,7 +251,7 @@ const BLOG = {
   ],
 
   // 鼠标跟随特效
-  MOUSE_FOLLOW: process.env.NEXT_PUBLIC_MOUSE_FOLLOW || true, // 开关
+  MOUSE_FOLLOW: process.env.NEXT_PUBLIC_MOUSE_FOLLOW || false, // 开关
   // 这两个只有在鼠标跟随特效开启时才生效
   // 鼠标类型 1：路劲散点 2：下降散点 3：上升散点 4：边缘向鼠标移动散点 5：跟踪转圈散点 6：路径线条 7：聚集散点 8：聚集网格 9：移动网格 10：上升粒子 11：转圈随机颜色粒子 12：圆锥放射跟随蓝色粒子
   MOUSE_FOLLOW_EFFECT_TYPE: 11, // 1-12
